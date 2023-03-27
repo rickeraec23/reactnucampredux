@@ -7,7 +7,7 @@ import {
   Nav,
   NavItem,
 } from "reactstrap";
-import { NavLink } from "reactstrap";
+import { Link } from "react-router-dom";
 import NucampLogo from "../app/assets/img/logo.png";
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <Navbar dark color="primary" sticky="top" expand="md">
-      <NavbarBrand className="ms-5" href="/">
+      <NavbarBrand className="ms-5" tag={Link} to="/">
         <img src={NucampLogo} alt="nucamp logo" className="float-start" />
         <h1 className="mt-1">NuCamp</h1>
       </NavbarBrand>
@@ -23,24 +23,24 @@ const Header = () => {
       <Collapse isOpen={menuOpen} navbar>
         <Nav className="ms-auto" navbar>
           <NavItem>
-            <NavLink className="nav-link" to="/">
+            <Link className="nav-link" to="/">
               <i className="fa fa-home fa-lg" /> Home
-            </NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink className="nav-link" to="/directory">
+            <Link className="nav-link" to="/directory">
               <i className="fa fa-list fa-lg" /> Directory
-            </NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink className="nav-link" to="/about">
+            <Link className="nav-link" to="/about">
               <i className="fa fa-info fa-lg" /> About
-            </NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink className="nav-link" to="/contact">
+            <Link className="nav-link" to="/contact">
               <i className="fa fa-address-card fa-lg" /> Contact
-            </NavLink>
+            </Link>
           </NavItem>
         </Nav>
       </Collapse>
